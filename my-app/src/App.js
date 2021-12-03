@@ -1,6 +1,7 @@
 import './App.css';
 import Chart from './chart';
 import Slider from "./slider";
+import ReactDOM from 'react-dom';
 
 const data = [
   {
@@ -76,6 +77,13 @@ var sliderVal = 500;
 function onSliderChange(value){
   console.log("slider changed " + value);
   sliderVal = value;
+  ReactDOM.render(
+    <Chart
+      data={data}
+      width={sliderVal}
+    />,
+    document.getElementById('chartdiv')
+  )
 }
 
 function App() {
@@ -85,9 +93,10 @@ function App() {
         onChange={onSliderChange}
       />
       
-      <Chart
-        data={data}
-      />
+      <div id='chartdiv'>
+
+      </div>
+
     </div>
   );
 }

@@ -1,9 +1,9 @@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend } from 'recharts';
-const Chart = ( {data} ) => {
+const Chart = ( { data, width } ) => {
   return (
     <BarChart
-        width={500}
-        height={300}
+        width={width}
+        height={width/2}
         data={data}
         margin={{
         top: 20,
