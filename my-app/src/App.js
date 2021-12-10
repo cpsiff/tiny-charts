@@ -74,14 +74,21 @@ const data = [
 
 var sliderVal = 500;
 
+function genChart(width){
+  if(true){
+    var chart = <Chart
+      data={data}
+      width={width}
+    />
+  }
+  return(chart)
+}
+
 function onSliderChange(value){
   console.log("slider changed " + value);
   sliderVal = value;
   ReactDOM.render(
-    <Chart
-      data={data}
-      width={sliderVal}
-    />,
+    genChart(sliderVal),
     document.getElementById('chartdiv')
   )
 }
