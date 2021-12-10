@@ -74,3 +74,9 @@
   height: 10px;
   line-height: 38px;
 }
+
+#chartdiv {
+  outline-color:#282c34;
+  outline-width: 5px;
+  outline-style: solid;
+}

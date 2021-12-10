@@ -72,23 +72,16 @@ const data = [
   }
 ];
 
-var sliderVal = 500;
-
-function genChart(width){
-  if(true){
-    var chart = <Chart
-      data={data}
-      width={width}
-    />
-  }
-  return(chart)
-}
+var sliderVal;
 
 function onSliderChange(value){
   console.log("slider changed " + value);
   sliderVal = value;
   ReactDOM.render(
-    genChart(sliderVal),
+    <Chart
+      data={data}
+      width={value}
+    />,
     document.getElementById('chartdiv')
   )
 }
@@ -99,11 +92,8 @@ function App() {
       <Slider 
         onChange={onSliderChange}
       />
-      
       <div id='chartdiv'>
-
       </div>
-
     </div>
   );
 }
