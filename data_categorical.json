@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Alabama",
+        "democrat": 729547,
+        "republican": 1318255,
+        "other": 75570
+    },
+    {
+        "name": "Colorado",
+        "democrat": 1338870,
+        "republican": 1202484,
+        "other": 238866
+    },
+    {
+        "name": "Missouri",
+        "democrat": 1071068,
+        "republican": 1594511,
+        "other": 143026
+    },
+    {
+        "name": "New Mexico",
+        "democrat": 385234,
+        "republican": 319667,
+        "other": 93418
+    },
+    {
+        "name": "Virginia",
+        "democrat": 1981473,
+        "republican": 1769443,
+        "other": 231836
+    },
+    {
+        "name": "Wisconsin",
+        "democrat": 1382536,
+        "republican": 1405284,
+        "other": 188330
+    }
+]
