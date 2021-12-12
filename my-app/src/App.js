@@ -112,7 +112,7 @@ const dataCategorical = [
       "other": 188330
   }
 ]
-var sliderVal;
+var sliderVal = 800;
 var typeToggle = "interval";
 var data = dataInterval;
 
