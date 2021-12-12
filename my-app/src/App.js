@@ -128,7 +128,6 @@ function handleToggle(event, newToggleVal){
 }
 
 function onSliderChange(value){
-  console.log("slider changed " + value);
   sliderVal = value;
   ReactDOM.render(
     <Chart
