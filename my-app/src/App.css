@@ -76,12 +76,28 @@
 
 #chart {
   outline-color:#282c34;
-  outline-width: 2px;
+  outline-width: 1px;
   outline-style: solid;
 }
 
-#chartdiv{
+#chart1div{
   justify-content: center;
   position: relative;
   display: flex;
+  margin-bottom: 30px;
+}
+
+#toggles{
+  justify-content: center;
+  position: relative;
+  display: flex;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+#title{
+  justify-content: center;
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
 }

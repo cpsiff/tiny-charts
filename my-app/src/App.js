@@ -2,6 +2,8 @@ import './App.css';
 import Chart from './chart';
 import Slider from "./slider";
 import ReactDOM from 'react-dom';
+import ToggleButton from '@mui/material/ToggleButton';
+import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
 const data = [
   {
@@ -73,6 +75,12 @@ const data = [
 ];
 
 var sliderVal;
+var typeToggle = "ordinal";
+
+function handleToggle(event, newToggleVal){
+  typeToggle = newToggleVal;
+  onSliderChange(sliderVal);
+}
 
 function onSliderChange(value){
   console.log("slider changed " + value);
@@ -81,18 +89,41 @@ function onSliderChange(value){
     <Chart
       data={data}
       width={value}
+      type={typeToggle}
     />,
-    document.getElementById('chartdiv')
+    document.getElementById('chart1div')
   )
+  if(typeToggle === "ordinal"){
+    ReactDOM.render(
+      "Wisconsin - Partisan Vote Count in Presidental Elections, 1976-2016",
+      document.getElementById('title')
+    )
+  }
+  else{
+    ReactDOM.render(
+      "Partisan Vote Count in 2016 Presidental Election - Selected States",
+      document.getElementById('title')
+    )
+  }
 }
 
 function App() {
   return (
     <div>
+      <ToggleButtonGroup id="toggles"
+        exclusive
+        onChange={handleToggle}
+      >
+        <ToggleButton value="categorical">categorical x axis</ToggleButton>
+        <ToggleButton value="ordinal">ordinal x axis</ToggleButton>
+      </ToggleButtonGroup>
       <Slider 
         onChange={onSliderChange}
       />
-      <div id='chartdiv'>
+      <div id='title'>
+      
+      </div>
+      <div id='chart1div'>
       </div>
     </div>
   );
