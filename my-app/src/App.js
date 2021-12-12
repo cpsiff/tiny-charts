@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 
-const data = [
+const dataInterval = [
   {
       "name": 1976,
       "democrat": 1040232,
@@ -74,11 +74,56 @@ const data = [
   }
 ];
 
+const dataCategorical = [
+  {
+      "name": "Alabama",
+      "democrat": 729547,
+      "republican": 1318255,
+      "other": 75570
+  },
+  {
+      "name": "Colorado",
+      "democrat": 1338870,
+      "republican": 1202484,
+      "other": 238866
+  },
+  {
+      "name": "Missouri",
+      "democrat": 1071068,
+      "republican": 1594511,
+      "other": 143026
+  },
+  {
+      "name": "New Mexico",
+      "democrat": 385234,
+      "republican": 319667,
+      "other": 93418
+  },
+  {
+      "name": "Virginia",
+      "democrat": 1981473,
+      "republican": 1769443,
+      "other": 231836
+  },
+  {
+      "name": "Wisconsin",
+      "democrat": 1382536,
+      "republican": 1405284,
+      "other": 188330
+  }
+]
 var sliderVal;
-var typeToggle = "ordinal";
+var typeToggle = "interval";
+var data = dataInterval;
 
 function handleToggle(event, newToggleVal){
   typeToggle = newToggleVal;
+  if(typeToggle === "interval"){
+    data = dataInterval;
+  }
+  else{
+    data = dataCategorical;
+  }
   onSliderChange(sliderVal);
 }
 
@@ -93,7 +138,11 @@ function onSliderChange(value){
     />,
     document.getElementById('chart1div')
   )
-  if(typeToggle === "ordinal"){
+  ReactDOM.render(
+    sliderVal.toString()+ " x " + (Math.floor(sliderVal/2)).toString() + "px",
+    document.getElementById('width')
+  )
+  if(typeToggle === "interval"){
     ReactDOM.render(
       "Wisconsin - Partisan Vote Count in Presidental Elections, 1976-2016",
       document.getElementById('title')
@@ -114,8 +163,8 @@ function App() {
         exclusive
         onChange={handleToggle}
       >
-        <ToggleButton value="categorical">categorical x axis</ToggleButton>
-        <ToggleButton value="ordinal">ordinal x axis</ToggleButton>
+        <ToggleButton value="categorical">categorical (state) x axis</ToggleButton>
+        <ToggleButton value="interval">interval (year) x axis</ToggleButton>
       </ToggleButtonGroup>
       <Slider 
         onChange={onSliderChange}
@@ -124,6 +173,14 @@ function App() {
       
       </div>
       <div id='chart1div'>
+      <Chart
+        data={data}
+        width={800}
+        type={typeToggle}
+      />
+      </div>
+      <div id='width'>
+        800 x 400px
       </div>
     </div>
   );

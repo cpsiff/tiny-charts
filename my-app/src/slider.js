@@ -4,11 +4,11 @@ const Slider = ({ onChange }) => {
     <ReactSlider
         max={1000}
         min={50}
+        defaultValue={800}
         className="horizontal-slider"
         thumbClassName="example-thumb"
         trackClassName="example-track"
         onChange={onChange}
-        renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}
     />
   );
 };

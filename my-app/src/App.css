@@ -49,7 +49,7 @@
   z-index: 100;
   background: #ffffff;
   border: 5px solid #3774ff;
-  border-radius: 0%;
+  border-radius: 100%;
   display: block;
 }
 .example-thumb.active {
@@ -63,14 +63,14 @@
   background: #83a9ff;
 }
 .horizontal-slider .example-track {
-  top: 20px;
+  top: 12px;
   height: 4px;
 }
 .horizontal-slider .example-thumb {
   top: 0px;
-  width: 30px;
+  width: 15px;
   outline: none;
-  height: 30px;
+  height: 15px;
   line-height: 32px;
 }
 
@@ -96,6 +96,13 @@
 }
 
 #title{
+  justify-content: center;
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#width{
   justify-content: center;
   position: relative;
   display: flex;
