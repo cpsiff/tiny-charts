@@ -5,7 +5,7 @@ const Chart = ( { data, width, type } ) => {
         if (width < 230){
             chart =
             <BarChart id="chart"
-                width={width/2}
+                width={width}
                 height={width/2}
                 data={data}
                 margin={{
